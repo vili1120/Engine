@@ -11,7 +11,7 @@ type Game interface {
 func RunGame(g Game) error {
   Width, Height := g.Layout()
   rl.InitWindow(int32(Width), int32(Height), "test")
-  defer rl.WindowShouldClose()
+  defer rl.CloseWindow()
 
   rl.SetTargetFPS(60)
 
