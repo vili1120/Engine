@@ -1,4 +1,4 @@
-module SceneV
+module github.com/vili1120/Engine/SceneV
 
 go 1.24.2
 
