@@ -13,6 +13,8 @@ func RunGame(g Game) error {
   rl.InitWindow(int32(Width), int32(Height), "test")
   defer rl.WindowShouldClose()
 
+  rl.SetTargetFPS(60)
+
   for !rl.WindowShouldClose() {
     if err := g.Update(); err != nil {
       return err
