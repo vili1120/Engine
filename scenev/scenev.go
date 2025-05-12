@@ -9,7 +9,7 @@ import (
 
 func InitWindow(w, h int, title string) {
   InitMSG("Initializing SDL2...")
-  if err := sdl.Init(sdl.INIT_VIDEO); err != nil {
+  if err := sdl.Init(sdl.INIT_EVERYTHING); err != nil {
     ErrorMSG("Failed to initialize SDL2: "+err.Error())
     os.Exit(0)
   }
@@ -17,7 +17,7 @@ func InitWindow(w, h int, title string) {
   SuccessMSG("Initalized SDL2 successfully")
   
   InitMSG("Creating the window")
-  window, err := sdl.CreateWindow(title, sdl.WINDOWPOS_CENTERED, int32(w), int32(h), sdl.WINDOW_VULKAN|sdl.WINDOW_SHOWN)
+  window, err := sdl.CreateWindow(title, sdl.WINDOWPOS_UNDEFINED, sdl.WINDOWPOS_UNDEFINED, int32(w), int32(h), sdl.WINDOW_VULKAN|sdl.WINDOW_SHOWN)
 
   if err != nil {
     ErrorMSG("Failed to create the window: "+err.Error())
